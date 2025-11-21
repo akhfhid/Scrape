@@ -1,5 +1,6 @@
 /*
-Creator : Akhfhid
+Creator: akhfhid
+Website: https://akhfhid.my.id
 */
 
 
@@ -8,7 +9,7 @@ const axios = require('axios');
 async function spotify(input) {
     try {
         if (!input) throw new Error('Input is required.');
-        
+
         const { data: s } = await axios.get(`https://spotdown.org/api/song-details?url=${encodeURIComponent(input)}`, {
             headers: {
                 origin: 'https://spotdown.org',
@@ -16,10 +17,10 @@ async function spotify(input) {
                 'user-agent': 'Mozilla/5.0 (Linux; Android 15; SM-F958 Build/AP3A.240905.015) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.6723.86 Mobile Safari/537.36'
             }
         });
-        
+
         const song = s.songs[0];
         if (!song) throw new Error('Track not found.');
-        
+
         const { data } = await axios.post('https://spotdown.org/api/download', {
             url: song.url
         }, {
@@ -30,7 +31,7 @@ async function spotify(input) {
             },
             responseType: 'arraybuffer'
         });
-        
+
         return {
             metadata: {
                 title: song.title,

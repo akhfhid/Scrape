@@ -1,5 +1,6 @@
 /*
-Creator: Akhfhid
+Creator: akhfhid
+Website: https://akhfhid.my.id
 */
 
 async function pinterest(url) {

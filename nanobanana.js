@@ -1,5 +1,6 @@
 /*
-Creator: Akhfhid 
+Creator: akhfhid
+Website: https://akhfhid.my.id
 */
 
 const { fromBuffer } = require('file-type');
@@ -22,15 +23,15 @@ class GridPlus {
         'X-GhostID': this.uid(),
         'X-DeviceID': this.uid(),
         'X-MCC': 'id-ID',
-        sig: `XX${this.uid()+this.uid()}`
+        sig: `XX${this.uid() + this.uid()}`
       }
     })
   }
-  
+
   uid() {
     return crypto.randomUUID().replace(/-/g, '')
   }
-  
+
   form(dt) {
     const form = new FormData();
     Object.entries(dt).forEach(([key, value]) => {
@@ -38,7 +39,7 @@ class GridPlus {
     });
     return form
   }
-  
+
   async upload(buff, method) {
     try {
       if (!Buffer.isBuffer(buff)) throw 'data is not buffer!';
@@ -52,11 +53,11 @@ class GridPlus {
         }
       });
       return d.data.img_url;
-    } catch(e) {
+    } catch (e) {
       throw new Error('An error occurred while uploading the image');
     }
   }
-  
+
   async task({ path, data, sl = () => false }) {
     const [start, interval, timeout] = [
       Date.now(), 3000, 60000
@@ -86,7 +87,7 @@ class GridPlus {
       check();
     });
   }
-  
+
   async edit(buff, prompt) {
     try {
       const up = await this.upload(buff, 'wn_aistyle_nano');
@@ -99,8 +100,8 @@ class GridPlus {
         sl: (dt) => dt.code === 0 && !!dt.image_url,
       });
       return res.image_url
-    } catch(e) {
+    } catch (e) {
       throw new Error('Something error, message: ' + e.message);
     }
   }
-            }
+}

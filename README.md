@@ -1,4 +1,4 @@
-# 🚀 Web Scraper Collection
+# Web Scraper Collection
 
 A collection of powerful web scraping tools for various platforms including Pinterest, Spotify, WormGPT AI, NanoBanana image editor, and proxy services.
 
@@ -48,7 +48,7 @@ run();
 
 ---
 
-### 2. 🎵 Spotify Downloader
+### 2. Spotify Downloader
 Download music from Spotify with metadata.
 
 **Usage:**

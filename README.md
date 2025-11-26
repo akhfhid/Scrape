@@ -11,7 +11,7 @@ A collection of powerful web scraping tools for various platforms including Pint
 First, clone this repository and install dependencies:
 
 ```bash
-git clone https://github.com/yourusername/Scrape.git
+git clone https://github.com/akhfhid/Scrape.git
 cd Scrape
 npm install axios form-data file-type
 ```
@@ -227,4 +227,8 @@ Contributions, issues, and feature requests are welcome!
 
 ## Show Your Support
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 662590e910273f4f28d49c81106ca93ea245f0e9
 Give a Star  if this project helped you!

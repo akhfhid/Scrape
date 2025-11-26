@@ -2,7 +2,7 @@
 
 A collection of powerful web scraping tools for various platforms including Pinterest, Spotify, WormGPT AI, NanoBanana image editor, and proxy services.
 
-> **Created by:** [akhfhid](https://akhfhid.my.id)
+> **Created by:** [Affan Khulafa Hidayah](https://akhfhid.my.id)
 
 ---
 
@@ -227,8 +227,4 @@ Contributions, issues, and feature requests are welcome!
 
 ## Show Your Support
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 662590e910273f4f28d49c81106ca93ea245f0e9
 Give a Star  if this project helped you!

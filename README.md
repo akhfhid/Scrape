@@ -212,7 +212,7 @@ Always ensure you have permission to scrape content.
 
 ## Author
 
-**akhfhid**
+**Affan Khulafa Hidayah**
 
 - Website: [https://akhfhid.my.id](https://akhfhid.my.id)
 - GitHub: [@akhfhid](https://github.com/akhfhid)

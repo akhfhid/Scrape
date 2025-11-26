@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "axios": "^1.13.2",
+    "file-type": "^21.1.1",
+    "form-data": "^4.0.5"
+  }
+}

@@ -27,18 +27,12 @@ async function pinterest(url) {
     return { error: e.message }
   }
 }
-//Example
-async function run() {
-  console.log(await pinterest("https://pin.it/lOPdveAO7"))
+
+module.exports = pinterest
+
+// Example
+if (require.main === module) {
+  (async () => {
+    console.log(await pinterest("https://pin.it/lOPdveAO7"))
+  })()
 }
-run()
-/*
-Json
-{
-  type: 'video',
-  title: 'Art',
-  author: 'ShiroAMV7',
-  username: 'shiroamv7',
-  media: 'https://v1.pinimg.com/videos/iht/expMp4/73/62/df/7362df9bf4d0db39680a0ee892db7f3b_720w.mp4'
-}
-*/

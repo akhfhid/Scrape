@@ -47,6 +47,12 @@ async function spotify(input) {
     }
 };
 
+module.exports = spotify;
+
 // Usage:
-// spotify('tek it').then(console.log);
-spotify('https://open.spotify.com/track/0MnTkIEP4zZN1IUSu8MvIz').then(console.log);
+if (require.main === module) {
+    // spotify('tek it').then(console.log);
+    spotify('https://open.spotify.com/track/0MnTkIEP4zZN1IUSu8MvIz')
+        .then(console.log)
+        .catch(console.error);
+}

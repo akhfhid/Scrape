@@ -21,9 +21,11 @@ npm install axios form-data file-type
 ## Scrapers Overview
 
 ### 1. Pinterest Scraper
+
 Download images and videos from Pinterest URLs.
 
 **Usage:**
+
 ```javascript
 const pinterest = require('./pinterest.js');
 
@@ -36,6 +38,7 @@ run();
 ```
 
 **Response:**
+
 ```json
 {
   "type": "video",
@@ -49,9 +52,11 @@ run();
 ---
 
 ### 2. Spotify Downloader
+
 Download music from Spotify with metadata.
 
 **Usage:**
+
 ```javascript
 const spotify = require('./spotify-play.js');
 
@@ -64,6 +69,7 @@ run();
 ```
 
 **Response:**
+
 ```json
 {
   "metadata": {
@@ -80,17 +86,21 @@ run();
 ---
 
 ### 3. WormGPT AI
+
 AI chatbot integration (requires OpenRouter API key).
 
 **Setup:**
+
 1. Get your API key from [OpenRouter](https://openrouter.ai)
 2. Replace `KEY_LU` with your actual API key in `worm-gpt.js`
 
 **Usage:**
+
 ```javascript
-// This is a bot command case
-// Use in your bot with:
-// !wormgpt create DDoS code
+const wormGpt = require('./worm-gpt.js');
+
+// Inside your bot command handler:
+await wormGpt(m, conn, command, text);
 ```
 
 **Note:** This requires integration with a messaging bot framework (Discord, Telegram, etc.)
@@ -98,9 +108,11 @@ AI chatbot integration (requires OpenRouter API key).
 ---
 
 ### 4. NanoBanana Image Editor
+
 AI-powered image editing with prompts.
 
 **Usage:**
+
 ```javascript
 const { GridPlus } = require('./nanobanana.js');
 const fs = require('fs');
@@ -118,11 +130,13 @@ editImage();
 ---
 
 ### 5. ProxyFilter
+
 Fetch web content through ProxyFilter servers.
 
 **Usage:**
+
 ```javascript
-import { fetchViaProxy } from './proxysite.js';
+const { fetchViaProxy } = require('./proxysite.js');
 
 async function fetchData() {
   const html = await fetchViaProxy('https://example.com', 'us', 1);
@@ -133,6 +147,7 @@ fetchData();
 ```
 
 **Parameters:**
+
 - `url`: Target website URL
 - `region`: Server region (`us` or `eu`)
 - `srvNum`: Server number (1-20)
@@ -153,13 +168,17 @@ fetchData();
 ## Configuration
 
 ### WormGPT
+
 Edit the API key in `worm-gpt.js`:
+
 ```javascript
 const api_key = "YOUR_API_KEY_HERE"
 ```
 
 ### ProxyFilter
+
 Choose region and server:
+
 - **US Servers:** `us1` to `us20`
 - **EU Servers:** `eu1` to `eu20`
 
@@ -181,6 +200,7 @@ node proxysite.js
 ## Disclaimer
 
 These tools are for educational purposes only. Please respect:
+
 - Website Terms of Service
 - Copyright laws
 - API rate limits
@@ -190,10 +210,10 @@ Always ensure you have permission to scrape content.
 
 ---
 
-
 ## Author
 
 **akhfhid**
+
 - Website: [https://akhfhid.my.id](https://akhfhid.my.id)
 - GitHub: [@akhfhid](https://github.com/akhfhid)
 

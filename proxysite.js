@@ -3,7 +3,7 @@ Creator: akhfhid
 Website: https://akhfhid.my.id
 */
 
-import axios from "axios";
+const axios = require("axios");
 
 const srv = {
   us: Array.from({ length: 20 }, (_, x) => "https://us" + (x + 1) + ".proxysite.com"),
@@ -45,8 +45,17 @@ async function fetchViaProxy(url, region = "us", srvNum = 1) {
 
   return r2.data
 }
+
+module.exports = { fetchViaProxy }
+
 // Cara pakai ini url,region,nomor server sampe 20 ada us ama eu oke 
-; (async () => {
-  const out = await fetchViaProxy("https://cloudkuimages.guru/status", "us", 1)
-  console.log(out)
-})()
+if (require.main === module) {
+  (async () => {
+    try {
+      const out = await fetchViaProxy("https://cloudkuimages.guru/status", "us", 1)
+      console.log(out)
+    } catch (e) {
+      console.error(e.message)
+    }
+  })()
+}

@@ -105,3 +105,20 @@ class GridPlus {
     }
   }
 }
+
+module.exports = { GridPlus }
+
+if (require.main === module) {
+  const fs = require('fs');
+  // Example usage if needed, but requires input file
+  // (async () => {
+  //   try {
+  //      const grid = new GridPlus();
+  //      // const imageBuffer = fs.readFileSync('input.jpg');
+  //      // const result = await grid.edit(imageBuffer, 'make it cyberpunk style');
+  //      // console.log('Result URL:', result);
+  //   } catch (e) {
+  //      console.error(e);
+  //   }
+  // })();
+}

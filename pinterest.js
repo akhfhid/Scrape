@@ -30,7 +30,6 @@ async function pinterest(url) {
 
 module.exports = pinterest
 
-// Example
 if (require.main === module) {
   (async () => {
     console.log(await pinterest("https://pin.it/lOPdveAO7"))

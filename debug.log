@@ -1,0 +1,10 @@
+Jimp export keys count: 22
+Keys: defaultPlugins, defaultFormats, JimpMime, Jimp, ResizeStrategy, distance, compareHashes, PNGColorType, PNGFilterType, BmpCompression, HorizontalAlign, VerticalAlign, BlendMode, loadFont, measureText, measureTextHeight, diff, intToRGBA, rgbaToInt, colorDiff
+Contains 'read'? false
+Contains 'Jimp'? true
+Jimp.read type: function
+Jimp.Jimp type: function
+Jimp.Jimp keys: 
+Downloading sample image...
+Blurring face...
+Success! Saved to blurred.jpg

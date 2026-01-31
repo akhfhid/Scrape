@@ -1,6 +1,6 @@
 /**
  * Anime Scraper Otakudesu
- * Creator by: Affan Khulafa (Fan)
+ * Creator by: Affan
  * Description:
  * Scraper sederhana untuk mengambil:
  * - Daftar anime

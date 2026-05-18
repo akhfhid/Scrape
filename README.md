@@ -1,230 +1,141 @@
-# Web Scraper Collection
+#  Scrape
 
-A collection of powerful web scraping tools for various platforms including Pinterest, Spotify, WormGPT AI, NanoBanana image editor, and proxy services.
-
-> **Created by:** [Affan Khulafa Hidayah](https://akhfhid.my.id)
+**Kumpulan script scraping dan otomatisasi untuk berbagai kebutuhan.**
 
 ---
 
-## Installation
+##  Tentang Repository
 
-First, clone this repository and install dependencies:
+Repository ini berisi berbagai **script JavaScript** untuk:
+
+- **Web scraping** (anime, Pinterest, dll.)
+- **Otomasi tugas** (blur wajah, hapus background, dll.)
+- **Integrasi AI** (Chat AI, Claude, dll.)
+- **Konversi format** (Web ke APK, dll.)
+
+---
+
+##  Daftar Script
+
+###  Anime & Streaming
+
+
+| Script                                                                     | Deskripsi                      |
+| -------------------------------------------------------------------------- | ------------------------------ |
+| `[animeku.js](https://github.com/akhfhid/Scrape/blob/main/animeku.js)`     | Scraper untuk situs Animeku.   |
+| `[otakudesu.js](https://github.com/akhfhid/Scrape/blob/main/otakudesu.js)` | Scraper untuk situs Otakudesu. |
+
+
+###  AI & Chatbot
+
+
+| Script                                                                   | Deskripsi                                          |
+| ------------------------------------------------------------------------ | -------------------------------------------------- |
+| `[chatai.js](https://github.com/akhfhid/Scrape/blob/main/chatai.js)`     | Scraper untuk DeepSeek Chat (support multi-model). |
+| `[claude.js](https://github.com/akhfhid/Scrape/blob/main/claude.js)`     | Integrasi dengan Claude AI.                        |
+| `[worm-gpt.js](https://github.com/akhfhid/Scrape/blob/main/worm-gpt.js)` | Script terkait WormGPT.                            |
+| `[zai.js](https://github.com/akhfhid/Scrape/blob/main/zai.js)`           | Script AI dengan nama "Zai".                       |
+
+
+###  Pengolahan Gambar
+
+
+| Script                                                                     | Deskripsi                         |
+| -------------------------------------------------------------------------- | --------------------------------- |
+| `[blur-face.js](https://github.com/akhfhid/Scrape/blob/main/blur-face.js)` | Blur wajah dalam gambar.          |
+| `[removebg.js](https://github.com/akhfhid/Scrape/blob/main/removebg.js)`   | Hapus background gambar.          |
+| `[test-blur.js](https://github.com/akhfhid/Scrape/blob/main/test-blur.js)` | Test script untuk `blur-face.js`. |
+
+
+###  Penelitian & Data
+
+
+| Script                                                                     | Deskripsi                          |
+| -------------------------------------------------------------------------- | ---------------------------------- |
+| `[research.js](https://github.com/akhfhid/Scrape/blob/main/research.js)`   | Script untuk riset/ekstraksi data. |
+| `[pinterest.js](https://github.com/akhfhid/Scrape/blob/main/pinterest.js)` | Scraper untuk Pinterest.           |
+
+
+###  Multimedia
+
+
+| Script                                                                           | Deskripsi              |
+| -------------------------------------------------------------------------------- | ---------------------- |
+| `[spotify-play.js](https://github.com/akhfhid/Scrape/blob/main/spotify-play.js)` | Putar lagu di Spotify. |
+
+
+###  Lainnya
+
+
+| Script                                                                             | Deskripsi                      |
+| ---------------------------------------------------------------------------------- | ------------------------------ |
+| `[nanobanana.js](https://github.com/akhfhid/Scrape/blob/main/nanobanana.js)`       | Script scraping (versi 1).     |
+| `[nanobanana2.js](https://github.com/akhfhid/Scrape/blob/main/nanobanana2.js)`     | Script scraping (versi 2).     |
+| `[nanobananapro.js](https://github.com/akhfhid/Scrape/blob/main/nanobananapro.js)` | Script scraping (versi pro).   |
+| `[web2apk.js](https://github.com/akhfhid/Scrape/blob/main/web2apk.js)`             | Konversi web ke APK.           |
+| `[proxysite.js](https://github.com/akhfhid/Scrape/blob/main/proxysite.js)`         | Handling proxy untuk scraping. |
+
+
+---
+
+##  Cara Menggunakan
+
+### 1. Clone Repository
 
 ```bash
 git clone https://github.com/akhfhid/Scrape.git
 cd Scrape
-npm install axios form-data file-type
 ```
 
----
-
-## Scrapers Overview
-
-### 1. Pinterest Scraper
-
-Download images and videos from Pinterest URLs.
-
-**Usage:**
-
-```javascript
-const pinterest = require('./pinterest.js');
-
-async function run() {
-  const result = await pinterest('https://pin.it/yourPinUrl');
-  console.log(result);
-}
-
-run();
-```
-
-**Response:**
-
-```json
-{
-  "type": "video",
-  "title": "Art",
-  "author": "Akhfhid",
-  "username": "Akhfhid",
-  "media": "https://v1.pinimg.com/videos/..."
-}
-```
-
----
-
-### 2. Spotify Downloader
-
-Download music from Spotify with metadata.
-
-**Usage:**
-
-```javascript
-const spotify = require('./spotify-play.js');
-
-async function run() {
-  const result = await spotify('https://open.spotify.com/track/yourTrackId');
-  console.log(result);
-}
-
-run();
-```
-
-**Response:**
-
-```json
-{
-  "metadata": {
-    "title": "Song Title",
-    "artist": "Artist Name",
-    "duration": "3:45",
-    "cover": "https://...",
-    "url": "https://open.spotify.com/track/..."
-  },
-  "audio": "<Buffer...>"
-}
-```
-
----
-
-### 3. WormGPT AI
-
-AI chatbot integration (requires OpenRouter API key).
-
-**Setup:**
-
-1. Get your API key from [OpenRouter](https://openrouter.ai)
-2. Replace `KEY_LU` with your actual API key in `worm-gpt.js`
-
-**Usage:**
-
-```javascript
-const wormGpt = require('./worm-gpt.js');
-
-// Inside your bot command handler:
-await wormGpt(m, conn, command, text);
-```
-
-**Note:** This requires integration with a messaging bot framework (Discord, Telegram, etc.)
-
----
-
-### 4. NanoBanana Image Editor
-
-AI-powered image editing with prompts.
-
-**Usage:**
-
-```javascript
-const { GridPlus } = require('./nanobanana.js');
-const fs = require('fs');
-
-async function editImage() {
-  const grid = new GridPlus();
-  const imageBuffer = fs.readFileSync('input.jpg');
-  const result = await grid.edit(imageBuffer, 'make it cyberpunk style');
-  console.log('Result URL:', result);
-}
-
-editImage();
-```
-
----
-
-### 5. ProxyFilter
-
-Fetch web content through ProxyFilter servers.
-
-**Usage:**
-
-```javascript
-const { fetchViaProxy } = require('./proxysite.js');
-
-async function fetchData() {
-  const html = await fetchViaProxy('https://example.com', 'us', 1);
-  console.log(html);
-}
-
-fetchData();
-```
-
-**Parameters:**
-
-- `url`: Target website URL
-- `region`: Server region (`us` or `eu`)
-- `srvNum`: Server number (1-20)
-
----
-
-## Requirements
-
-- Node.js 14+
-- Dependencies:
-  - `axios`
-  - `form-data`
-  - `file-type`
-  - `node:crypto` (built-in)
-
----
-
-## Configuration
-
-### WormGPT
-
-Edit the API key in `worm-gpt.js`:
-
-```javascript
-const api_key = "YOUR_API_KEY_HERE"
-```
-
-### ProxyFilter
-
-Choose region and server:
-
-- **US Servers:** `us1` to `us20`
-- **EU Servers:** `eu1` to `eu20`
-
----
-
-## Testing
-
-Each scraper includes example code at the bottom of the file. Simply run:
+### 2. Install Dependensi
 
 ```bash
-node pinterest.js
-node spotify-play.js
-node nanobanana.js
-node proxysite.js
+npm install
+```
+
+*(Pastikan `package.json` sudah terisi dengan benar.)*
+
+### 3. Jalankan Script
+
+Contoh untuk menjalankan `chatai.js`:
+
+```javascript
+const { chatai, listModels } = require('./chatai.js');
+
+// Contoh penggunaan
+chatai({
+  input: "Hai, apa kabar?",
+  model: "deepseek-v3" // Lihat daftar model di `listModels`
+}).then(console.log).catch(console.error);
 ```
 
 ---
 
-## Disclaimer
+##  Dependensi Utama
 
-These tools are for educational purposes only. Please respect:
-
-- Website Terms of Service
-- Copyright laws
-- API rate limits
-- Robot.txt files
-
-Always ensure you have permission to scrape content.
+- `axios`: Untuk HTTP requests.
+- `form-data`: Untuk handling form data (misal: upload file).
+- `cheerio` (jika diperlukan): Untuk parsing HTML.
 
 ---
 
-## Author
+##  Kontribusi
 
-**Affan Khulafa Hidayah**
+Kontribusi sangat welcome! Buka **Pull Request** atau **Issue** jika ada:
 
-- Website: [https://akhfhid.my.id](https://akhfhid.my.id)
-- GitHub: [@akhfhid](https://github.com/akhfhid)
-
----
-
-## Contributing
-
-Contributions, issues, and feature requests are welcome!
+- Bug
+- Fitur baru
+- Peningkatan kode
 
 ---
 
-## Show Your Support
+##  Lisensi
 
-Give a Star  if this project helped you!
+Repository ini menggunakan lisensi **[MIT](https://github.com/akhfhid/Scrape/blob/main/LICENSE)**.
+
+---
+
+##  Kontak
+
+- **Author**: [akhfhid](https://github.com/akhfhid)
+- **Repository**: [akhfhid/Scrape](https://github.com/akhfhid/Scrape)
